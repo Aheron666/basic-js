@@ -25,7 +25,8 @@ function createDreamTeam(arr) {
   });
   for (let elem of arr) {
     string = string + elem;
-    string = string.split('').sort().join('');
+    string = string.split('').sort().join('').toUpperCase();
+
   }
   return string;
 }

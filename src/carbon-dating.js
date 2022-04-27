@@ -18,9 +18,10 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(a) {
+  let reg = /^\d+$/ 
   let b = a * 1;
   let res = Math.ceil((Math.log(15 / b) / 0.693) * 5730);
-  if (typeof res === 'number') return res;
+  if (reg.test(res)) return res;
   else return false;
 }
 

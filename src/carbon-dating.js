@@ -21,7 +21,7 @@ function dateSample(a) {
   let reg = /^\d+$/ 
   let b = a * 1;
   let res = Math.ceil((Math.log(MODERN_ACTIVITY / b) / 0.693) * HALF_LIFE_PERIOD);
-  if (reg.test(res)) return res;
+  if (reg.test(res) && res > 0) return res;
   else return false;
 }
 

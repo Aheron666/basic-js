@@ -26,9 +26,10 @@ function getSeason(date) {
       if (dateMonth === 12 || dateMonth < 3)
       seasonName = 'winter'
   }
+  else seasonName = "Invalid date!"
+
   if (date === undefined)
   seasonName = 'Unable to determine the time of year!';
-  else seasonName = "Invalid date!"
  
   return seasonName;
 }

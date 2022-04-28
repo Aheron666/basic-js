@@ -12,8 +12,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(/* date */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    let seasonName;
+    let dateMonth = date.getMonth() + 1
+    console.log(dateMonth);
+    if (dateMonth > 2 && dateMonth < 6)
+    seasonName = 'spring'
+    if (dateMonth > 5 && dateMonth < 9)
+    seasonName = 'summer'
+    if (dateMonth > 8 && dateMonth < 12)
+    seasonName = 'autumn'
+    else
+    seasonName = 'winter'
+    
+    return seasonName;
 }
 
 module.exports = {

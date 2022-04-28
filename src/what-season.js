@@ -21,7 +21,7 @@ function getSeason(/* date */) {
     seasonName = 'summer'
     if (dateMonth > 8 && dateMonth < 12)
     seasonName = 'autumn'
-    if (dateMonth === 12 && dateMonth < 3)
+    if (dateMonth === 12 || dateMonth < 3)
     seasonName = 'winter'
     
     return seasonName;

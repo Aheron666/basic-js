@@ -14,22 +14,39 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(arr) {
+  // let string = '';
+  // if (arr === null) return arr = '';
+  // if (typeof arr !== 'object') return false;
+  // arr = arr.map((item) => {
+  //   if (typeof item !== 'string') return (item = '');
+  //   else return item.replaceAll(' ', '');
+  // });
+  // arr = arr.map((item) => {
+  //   return item.slice(0, 1);
+  // });
+  // for (let elem of arr) {
+  //   string = string + elem;
+  //   string = string.toUpperCase().split('').sort().join('');
+  // }
+  // if (string === '') return false;
+  // return string;
   let string = '';
-  if (arr === null) return arr = '';
-  if (typeof arr !== 'object') return false;
-  arr = arr.map((item) => {
-    if (typeof item !== 'string') return (item = '');
-    else return item.replaceAll(' ', '');
-  });
-  arr = arr.map((item) => {
-    return item.slice(0, 1);
-  });
-  for (let elem of arr) {
-    string = string + elem;
-    string = string.toUpperCase().split('').sort().join('');
-  }
-  if (string === '') return false;
-  return string;
+  if (Array.isArray(arr)){
+    arr = arr.map((item) => {
+      if (typeof item !== 'string') return (item = '');
+      else return item.replaceAll(' ', '');
+    });
+    arr = arr.map((item) => {
+      return item.slice(0, 1);
+    });
+    for (let elem of arr) {
+      string = string + elem;
+      string = string.toUpperCase().split('').sort().join('');
+    }
+    if (string === '') return false;
+    return string;
+  } 
+  else return false;
 }
 
 module.exports = {

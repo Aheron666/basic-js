@@ -15,6 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function createDreamTeam(arr) {
   let string = '';
+  if (arr === null) return false;
   if (typeof arr !== 'object') return false;
   arr = arr.map((item) => {
     if (typeof item !== 'string') return (item = '');

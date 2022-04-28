@@ -17,10 +17,6 @@ function createDreamTeam(arr) {
   let string = '';
   if (typeof arr !== 'object') return false;
   arr = arr.map((item) => {
-    if (item === null) return false;
-    else return item;
-  });
-  arr = arr.map((item) => {
     if (typeof item !== 'string') return (item = '');
     else return item.replaceAll(' ', '');
   });

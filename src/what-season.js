@@ -12,6 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
+  throw new NotImplementedError('Not implemented');
   let seasonName;
   console.log(date)
   if (Object.prototype.toString.call(date) === '[object Date]'){

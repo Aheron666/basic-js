@@ -18,48 +18,57 @@ function transform(arr) {
   let discardPrev = '--discard-prev';
   let doubleNext = '--double-next';
   let doublePrev = '--double-prev';
+  const qwe = arr;
   let newArr = arr;
-  if (Array.isArray(newArr)){
+  console.log(arr);
+  if (Array.isArray(newArr)) {
     newArr.map((item, index) => {
-        if (item === discardNext) {
-            if (index === newArr.length - 1){
-                newArr.splice((newArr.indexOf(newArr[index])), 1);
-            }
-            else {
-                newArr.splice((newArr.indexOf(newArr[index])), 1)
-                newArr.splice((newArr.indexOf(newArr[index])), 1)
-            }
+      if (item === discardNext) {
+        if (index === newArr.length - 1) {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
+        } else {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
         }
-        if (item === discardPrev) {
-            if (index === 0){
-                newArr.splice((newArr.indexOf(newArr[index])), 1);
-            }
-            else {
-                newArr.splice((newArr.indexOf(newArr[index])), 1);
-                newArr.splice((newArr.indexOf(newArr[index - 1])), 1)
-            }
+      }
+      if (item === discardPrev) {
+        if (index === 0) {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
+        } else {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
+          newArr.splice(newArr.indexOf(newArr[index - 1]), 1);
         }
-        if (item === doubleNext) {
-            newArr[index] = newArr[index+1]
-            if (index === newArr.length - 1){
-                newArr.splice((newArr.indexOf(newArr[index])), 1);
-            }
-            // newArr.splice((newArr.indexOf(newArr[index])), 1, newArr[index+1]);
+      }
+      if (item === doubleNext) {
+        newArr[index] = newArr[index + 1];
+        if (index === newArr.length - 1) {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
         }
-        if (item === doublePrev) {
-            newArr[index] = newArr[index - 1]
-            if (index === 0){
-                newArr.splice((newArr.indexOf(newArr[index])), 1);
-            }
-            // newArr.splice((newArr.indexOf(newArr[index])), 1 , newArr[index - 1]);
+        // newArr.splice((newArr.indexOf(newArr[index])), 1, newArr[index+1]);
+      }
+      if (item === doublePrev) {
+        newArr[index] = newArr[index - 1];
+        if (index === 0) {
+          newArr.splice(newArr.indexOf(newArr[index]), 1);
         }
-        return newArr;
-      })
-  }
+        // newArr.splice((newArr.indexOf(newArr[index])), 1 , newArr[index - 1]);
+      }
+      return newArr;
+    });
+  } 
 
-  else newArr = "\'arr\' parameter must be an instance of the Array!"
- 
-  return newArr; 
+  else newArr = "'arr' parameter must be an instance of the Array!";
+
+  for (let key of newArr){
+    if (
+        key === discardNext ||
+        key === discardPrev ||
+        key === doubleNext ||
+        key === doublePrev
+      )
+      transform(arr)
+  }
+  return newArr;
 }
 
 module.exports = {

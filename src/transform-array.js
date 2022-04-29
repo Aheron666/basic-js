@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-function transform(/* arr */) {
+function transform(arr) {
   let discardNext = '--discard-next';
   let discardPrev = '--discard-prev';
   let doubleNext = '--double-next';

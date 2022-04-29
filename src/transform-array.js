@@ -14,7 +14,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(/* arr */) {
-  function transform(arr) {
     let discardNext = '--discard-next';
     let discardPrev = '--discard-prev';
     let doubleNext = '--double-next';
@@ -46,7 +45,6 @@ function transform(/* arr */) {
    
     return newArr; 
   
-  }
 }
 
 module.exports = {

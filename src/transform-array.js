@@ -17,9 +17,7 @@ function transform(arr) {
   let discardNext = '--discard-next';
   let discardPrev = '--discard-prev';
   let doubleNext = '--double-next';
-  let doublePrev = '--double-prev';
-  const qwe = arr;
-  let newArr = arr;
+  let newArr = [...arr];
   console.log(arr);
   if (Array.isArray(newArr)) {
     newArr.map((item, index) => {
